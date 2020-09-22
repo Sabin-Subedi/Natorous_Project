@@ -4,10 +4,10 @@
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 50rem;
+  height: 52rem;
 
   &__side {
-    height: 50rem;
+    height: 52rem;
     position: absolute;
     top: 0;
     left: 0;
@@ -28,6 +28,20 @@
           to right bottom,
           $color-secondary-light,
           $color-secondary
+        );
+      }
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary
+        );
+      }
+      &-3 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary
         );
       }
     }
@@ -57,10 +71,20 @@
         url(../img/nat-5.jpg);
     }
     &--2 {
-      background-image: url(../img/nat-6.jpg);
+      background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary
+        ),
+        url(../img/nat-6.jpg);
     }
     &--3 {
-      background-image: url(../img/nat-7.jpg);
+      background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary
+        ),
+        url(../img/nat-7.jpg);
     }
   }
 
@@ -71,11 +95,16 @@
     color: $color-white;
     position: absolute;
     top: 12rem;
-    right: 2rem;
+    right: 5rem;
     width: 75%;
+    text-align: right;
   }
 
   &__heading-span {
+    padding: 1rem 1.5rem;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+
     &--1 {
       background-image: linear-gradient(
         to right bottom,
@@ -83,5 +112,49 @@
         rgba($color-secondary, 0.85)
       );
     }
+  }
+
+  &__details {
+    padding: 3rem;
+
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-grey-light-2;
+        }
+      }
+    }
+  }
+
+  //BACK SIDE STYLING
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+
+  &__price-box {
+    text-align: center;
+    color: $color-white;
+    margin-bottom: 8rem;
+  }
+
+  &__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 100;
   }
 }
